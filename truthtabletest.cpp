@@ -50,8 +50,8 @@ Number of rows for a truth table of 32 = 4294967296
 Run time for truthtable for n = 32 is 578.154 secs
 -----------------------------------------------------------------*/
 int main() {
-#if 0
-	for (int n = 1; n < 35; ++n) {
+#if 1
+	for (int n = 1; n < 32; ++n) {
 		clock_t start = clock();
 		bool verbose = (n < 9) ? true : false;
 		truthtable a(n, verbose);
@@ -61,11 +61,15 @@ int main() {
 	}
 #endif // 0
 
-#if 1
-
-	truthtable t(2, true);
-	t.fillArray(2);
-	t.display(2);
+#if 0
+	int n = 9;
+	clock_t start = clock();
+	truthtable t(n, false);
+	clock_t end = clock();
+	double d = double(end - start) / CLOCKS_PER_SEC;
+	cout << "Run time for truthtable for n = " << n << " is " << d << " secs" << endl;
+	//t.fillArray(3);
+	//t.display(3);
 	
 
 #endif //1
@@ -82,8 +86,15 @@ int main() {
 	cout << !bool((j & 1)) << endl;
 	j = j >> 1;
 	cout << !bool((j & 1)) << endl;
+
+
+	char ch = '0';
+	cout << (int)ch << endl;
+	cout << !((int)ch - '0') << endl;
+
 #endif // 0
 
+	//cout << !0 << endl;
   return 0 ;
 }
 

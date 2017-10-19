@@ -9,7 +9,7 @@ class truthtable {
 
 public:
 
-	truthtable(int n = 1, bool verbose = false) : _array(n), _display(verbose) {
+	truthtable(int n = 1, bool verbose = false) : _array(nullptr), _display(verbose) {
 
 		if (_display) {
 
@@ -17,6 +17,21 @@ public:
 		}
 
 		//allocate(n);
+		int length = pow(2, n);
+		_array = new char* [length];
+		for (int i = 0; i < length; i++) {
+
+			_array[i] = new char[n];
+			//fillArray(i, n);
+		}
+
+		fillArray(n);
+
+		if (_display) {
+
+			display(n);
+		}
+		
 
 
 	}
@@ -36,7 +51,7 @@ public:
 
 private:
 
-	darray<darray<int>> _array;
+	char** _array;
 	bool _display;
 
 
