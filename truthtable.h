@@ -11,32 +11,17 @@ public:
 
 	truthtable(int n = 1, bool verbose = false) : _display(verbose) {
 
-		if (_display) {
-
-			cout << "In truthtable const" << endl;
-		}
-
-
 		fillArray(n);
 
 	}
 
-	~truthtable() {
-
-		if (_display) {
-
-			cout << "In truthtable dest" << endl;
-		}
-
-	}
+	~truthtable() {}
 
 	void fillArray(int n);
 	
 private:
 
 	bool _display;
-
-
 
 };
 

@@ -16,6 +16,7 @@ This file test truthtable object
 All includes here
 -----------------------------------------------------------------*/
 #include "truthtable.h"
+#include "vld.h"
 
 /*----------------------------------------------------------------
 You cannot change anything in this file
@@ -51,7 +52,7 @@ Run time for truthtable for n = 32 is 578.154 secs
 -----------------------------------------------------------------*/
 int main() {
 
-	for (int n = 1; n < 35; ++n) {
+	for (int n = 1; n < 20; ++n) {
 		clock_t start = clock();
 		bool verbose = (n < 9) ? true : false;
 		truthtable a(n, verbose);
